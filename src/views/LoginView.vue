@@ -9,13 +9,10 @@
         </b-notification> -->
         <form @submit.prevent="login">
             <div class="field">
-              <p class="control has-icons-left has-icons-right">
+              <p class="control has-icons-left">
                 <input class="input" type="email" placeholder="Email">
                 <span class="icon is-small is-left">
                   <i class="fas fa-envelope"></i>
-                </span>
-                <span class="icon is-small is-right">
-                  <i class="fas fa-check"></i>
                 </span>
               </p>
             </div>
@@ -40,7 +37,7 @@ export default {
   data () {
     return {
       form: {
-        username: '',
+        email: '',
         password: ''
       },
       isLoading: false,

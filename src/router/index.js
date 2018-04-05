@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import LoginView from '../views/LoginView'
+import RegisterView from '../views/RegisterView'
 
 Vue.use(Router)
 
@@ -9,6 +10,7 @@ export default new Router({
     {
       path: '/'
     },
-    {path: '/signin', component: LoginView}
+    {path: '/login', component: LoginView},
+    {path: '/register', component: RegisterView}
   ]
 })
