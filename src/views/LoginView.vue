@@ -10,7 +10,7 @@
         <form @submit.prevent="login">
             <div class="field">
               <p class="control has-icons-left">
-                <input class="input" type="email" placeholder="Email">
+                <input v-model="form.username" class="input" type="text" placeholder="Nome">
                 <span class="icon is-small is-left">
                   <i class="fas fa-envelope"></i>
                 </span>
@@ -18,7 +18,7 @@
             </div>
             <div class="field">
               <p class="control has-icons-left">
-                <input class="input" type="password" placeholder="Password">
+                <input v-model="form.password" class="input" type="password" placeholder="Password">
                 <span class="icon is-small is-left">
                   <i class="fas fa-lock"></i>
                 </span>
@@ -28,6 +28,7 @@
                 Logar
             </button>
         </form>
+        <router-link to="/register">Cadastrar</router-link>
     </div>
 </template>
 
@@ -37,7 +38,7 @@ export default {
   data () {
     return {
       form: {
-        email: '',
+        username: '',
         password: ''
       },
       isLoading: false,
