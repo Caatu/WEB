@@ -28,7 +28,7 @@
                 Logar
             </button>
         </form>
-        <router-link to="/register">Cadastrar</router-link>
+        <router-link to="/register">Registre-se</router-link>
     </div>
 </template>
 
