@@ -1,18 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import LoginView from '../views/LoginView'
-import RegisterView from '../views/RegisterView'
-import DashboardView from '../views/DashboardView'
+import routes from './routes'
 
 Vue.use(Router)
 
-export default new Router({
-  routes: [
-    {
-      path: '/'
-    },
-    {path: '/login', component: LoginView},
-    {path: '/register', component: RegisterView},
-    {path: '/dasboard', component: DashboardView}
-  ]
+const router = new Router({ routes })
+
+router.beforeEach((to, from, next) => {
+  if(window.localStorage.getItem('id') == null && to.path != '/login'){
+    next('/login')
+  }
+  next()
 })
+
+export default router

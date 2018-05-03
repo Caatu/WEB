@@ -4,7 +4,7 @@
       <h1 class="title">Caatu</h1>
       <p class="subtitle">Registro de Usuário</p>
     </div>
-    <form @submit.prevent="register_send()">
+    <form @submit.prevent="register(form)">
       <div class="field">
         <p class="control has-icons-left">
           <input v-model="form.username" class="input" type="text" placeholder="Nome">
@@ -57,10 +57,7 @@ export default {
   methods: {
     ...mapActions([
       'register'
-    ]),
-    register_send: function () {
-      store.dispatch('register', this.form)
-    }
+    ])
   }
 }
 </script>

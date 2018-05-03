@@ -1,3 +1,1 @@
-import { default as app } from '../views/vuex'
-
-export default { ...app }
+export * from '../views/vuex'

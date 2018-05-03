@@ -1,4 +1,5 @@
 <template>
+
     <div id="login-view" class="container has-text-centered">
         <h1 class="title">Caatu</h1>
         <p class="subtitle">
@@ -7,7 +8,7 @@
         <!-- <b-notification :active.sync="loginError" type="is-danger">
             Não foi possivel logar com as credências providas
         </b-notification> -->
-        <form @submit.prevent="login">
+        <form @submit.prevent="login(form)">
             <div class="field">
               <p class="control has-icons-left">
                 <input v-model="form.username" class="input" type="text" placeholder="Nome">
@@ -33,6 +34,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+import store from '@/vuex/store'
 export default {
   name: 'login-view',
   data () {
@@ -46,6 +49,9 @@ export default {
     }
   },
   methods: {
+    ...mapActions([
+      'login'
+    ])
   }
 }
 </script>

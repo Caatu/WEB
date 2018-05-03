@@ -1,5 +1,6 @@
 import axios from 'axios'
-import store from '../../../vuex/store'
+import store from '@/vuex/store'
+import router from '@/router'
 
 export default {
   login ({commit}, form) {
@@ -15,7 +16,7 @@ export default {
         window.localStorage.setItem('user', response.data.username)
         window.localStorage.setItem('id', response.data.id)
         store.commit('user_mutation')
-        self.$router.push('/DashboardView')
+        router.push('/dasboard')
       })
       .catch(function (error){
         console.log(error)
